@@ -110,13 +110,13 @@
                 ]
             }
         },
-        "/api/auth/register": {
+        "/api/register": {
             "post": {
                 "tags": [
                     "Authentication"
                 ],
                 "summary": "Register a new user",
-                "operationId": "c7bb21a0d87049e161b8e4c9b0d909f2",
+                "operationId": "8e4e3cb7b46126f4696379d3c7eeb4ad",
                 "requestBody": {
                     "description": "Pass user credentials",
                     "required": true,
@@ -192,13 +192,13 @@
                 }
             }
         },
-        "/api/auth/login": {
+        "/api/login": {
             "post": {
                 "tags": [
                     "Authentication"
                 ],
                 "summary": "Login a user",
-                "operationId": "dd51a484b7fa0f97c7680fdbde14cf5f",
+                "operationId": "222b2625838e3c57e017987f73598fda",
                 "requestBody": {
                     "description": "Pass user credentials",
                     "required": true,
@@ -262,13 +262,13 @@
                 }
             }
         },
-        "/api/auth/logout": {
+        "/api/logout": {
             "post": {
                 "tags": [
                     "Authentication"
                 ],
                 "summary": "Logout a user",
-                "operationId": "df9bdc6c7a6d9f20b983526b2ec0f698",
+                "operationId": "ad65cbbd4e9f201619eae184a5961a98",
                 "responses": {
                     "200": {
                         "description": "Logout successful",
@@ -310,13 +310,13 @@
                 ]
             }
         },
-        "/api/auth/refresh": {
+        "/api/refresh": {
             "post": {
                 "tags": [
                     "Authentication"
                 ],
                 "summary": "Refresh authentication token",
-                "operationId": "30c20c52f5f72828d8c531fd7c9ea3e7",
+                "operationId": "f6409cd8d794404a6410b0767432b0f4",
                 "responses": {
                     "200": {
                         "description": "Token refreshed successfully",
@@ -358,13 +358,13 @@
                 ]
             }
         },
-        "/api/auth/forgot-password": {
+        "/api/forgot-password": {
             "post": {
                 "tags": [
                     "Authentication"
                 ],
                 "summary": "Request a password reset link",
-                "operationId": "f51c7074de53475eab87e336cc4e06a6",
+                "operationId": "20d78161b19ac6afb56924e74974ec46",
                 "requestBody": {
                     "description": "Pass user email",
                     "required": true,
@@ -422,13 +422,13 @@
                 }
             }
         },
-        "/api/auth/reset-password": {
+        "/api/reset-password": {
             "post": {
                 "tags": [
                     "Authentication"
                 ],
                 "summary": "Reset user password",
-                "operationId": "96e44e1ebcd811418fd95ee4c56162f0",
+                "operationId": "0a6624b616e4ba5a310a61d9f7418c35",
                 "requestBody": {
                     "description": "Pass token, email and new password",
                     "required": true,
@@ -503,13 +503,13 @@
                 }
             }
         },
-        "/api/auth/verify-email": {
+        "/api/verify-email": {
             "post": {
                 "tags": [
                     "Authentication"
                 ],
                 "summary": "Verify user email address",
-                "operationId": "d35e89cf73a61685a798f26d0eab3619",
+                "operationId": "fbc7adf060ede52efb0704bd0c64ffed",
                 "requestBody": {
                     "description": "Pass email and OTP",
                     "required": true,
@@ -572,13 +572,13 @@
                 }
             }
         },
-        "/api/auth/resend-verification": {
+        "/api/resend-verification": {
             "post": {
                 "tags": [
                     "Authentication"
                 ],
                 "summary": "Resend email verification link",
-                "operationId": "3a85353b217a52c3c33cd55d6aa38662",
+                "operationId": "6a4e146c2d2dd433692f0eccb3da1c83",
                 "responses": {
                     "200": {
                         "description": "Verification link sent",

@@ -22,7 +22,7 @@ class AuthController extends BaseController
 
     /**
      * @OA\Post(
-     * path="/api/auth/register",
+     * path="/api/register",
      * summary="Register a new user",
      * tags={"Authentication"},
      * @OA\RequestBody(
@@ -86,7 +86,7 @@ class AuthController extends BaseController
 
     /**
      * @OA\Post(
-     * path="/api/auth/login",
+     * path="/api/login",
      * summary="Login a user",
      * tags={"Authentication"},
      * @OA\RequestBody(
@@ -165,7 +165,7 @@ class AuthController extends BaseController
 
     /**
      * @OA\Post(
-     * path="/api/auth/logout",
+     * path="/api/logout",
      * summary="Logout a user",
      * tags={"Authentication"},
      * security={{"sanctum":{}}},
@@ -197,7 +197,7 @@ class AuthController extends BaseController
 
     /**
      * @OA\Post(
-     * path="/api/auth/refresh",
+     * path="/api/refresh",
      * summary="Refresh authentication token",
      * tags={"Authentication"},
      * security={{"sanctum":{}}},
@@ -235,7 +235,7 @@ class AuthController extends BaseController
 
     /**
      * @OA\Post(
-     * path="/api/auth/forgot-password",
+     * path="/api/forgot-password",
      * summary="Request a password reset link",
      * tags={"Authentication"},
      * @OA\RequestBody(
@@ -291,7 +291,7 @@ class AuthController extends BaseController
 
     /**
      * @OA\Post(
-     * path="/api/auth/reset-password",
+     * path="/api/reset-password",
      * summary="Reset user password",
      * tags={"Authentication"},
      * @OA\RequestBody(
@@ -357,7 +357,7 @@ class AuthController extends BaseController
 
     /**
      * @OA\Post(
-     * path="/api/auth/verify-email",
+     * path="/api/verify-email",
      * summary="Verify user email address",
      * tags={"Authentication"},
      * @OA\RequestBody(
@@ -416,7 +416,7 @@ class AuthController extends BaseController
 
     /**
      * @OA\Post(
-     * path="/api/auth/resend-verification",
+     * path="/api/resend-verification",
      * summary="Resend email verification link",
      * tags={"Authentication"},
      * security={{"sanctum":{}}},
