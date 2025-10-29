@@ -88,4 +88,8 @@ class Doctor extends Authenticatable
         return $this->hasMany(LabReport::class);
     }
     
+    public function diagnostics()
+    {
+        return $this->hasMany(Diagnostic::class);
+    }
 }
