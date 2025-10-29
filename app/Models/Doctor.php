@@ -77,5 +77,20 @@ class Doctor extends Authenticatable
     {
         return $this->morphToMany(Review::class, 'reviewable');
     }
+
+    public function appointments()
+    {
+        return $this->hasMany(Appointment::class);
+    }
+
+    public function labReports()
+    {
+        return $this->hasMany(LabReport::class);
+    }
+
+    public function diagnostics()
+    {
+        return $this->hasMany(Diagnostic::class);
+    }
     
 }
