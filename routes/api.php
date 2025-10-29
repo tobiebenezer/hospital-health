@@ -48,3 +48,7 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/analytics', [App\Http\Controllers\Api\DashboardController::class, 'analytics']);
     Route::get('/doctor-stats', [App\Http\Controllers\Api\DashboardController::class, 'doctorStats']);
 })->middleware('auth:sanctum');
+
+Route::get('/doc', function () {
+    return response()->json(json_decode(file_get_contents(storage_path('api-docs/api-docs.json')), JSON_PRETTY_PRINT));
+});
