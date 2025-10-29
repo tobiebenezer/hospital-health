@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\User;
+use App\Models\Patient;
+use App\Models\Doctor;
 use App\Services\AuthService;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
@@ -122,7 +124,23 @@ class AuthController extends BaseController
                 'password' => 'required|string',
             ]);
 
-            if (!Auth::attempt($request->only('email', 'password'))) {
+            $email = $request->input('email');
+            $password = $request->input('password');
+
+            $entity = User::where('email', $email)->first();
+            $type = 'user';
+
+            if (!$entity) {
+                $entity = Patient::where('email', $email)->first();
+                $type = $entity ? 'patient' : $type;
+            }
+
+            if (!$entity) {
+                $entity = Doctor::where('email', $email)->first();
+                $type = $entity ? 'doctor' : $type;
+            }
+
+            if (!$entity || !Hash::check($password, $entity->password)) {
                 return response()->json([
                     'success' => false,
                     'error' => [
@@ -135,15 +153,14 @@ class AuthController extends BaseController
                 ], 401);
             }
 
-            $user = User::where('email', $request['email'])->firstOrFail();
-
-            $token = $user->createToken('auth_token')->plainTextToken;
+            $token = $entity->createToken('auth_token')->plainTextToken;
 
             return response()->json([
                 'success' => true,
                 'data' => [
-                    'user' => $user,
+                    'user' => $entity,
                     'token' => $token,
+                    'type' => $type,
                 ],
                 'message' => 'Login successful',
             ]);
