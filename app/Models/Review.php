@@ -23,8 +23,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Review extends Model
 {   
-    use SoftDeletes;
-    
+    // use SoftDeletes;
+
     protected $fillable = [
         'auth_type',
         'auth_id',
