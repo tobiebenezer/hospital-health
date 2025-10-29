@@ -72,5 +72,10 @@ class Doctor extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function reviews()
+    {
+        return $this->morphToMany(Review::class, 'reviewable');
+    }
     
 }
