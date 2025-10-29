@@ -75,7 +75,7 @@ class Doctor extends Authenticatable
 
     public function reviews()
     {
-        return $this->morphToMany(Review::class, 'reviewable');
+        return $this->morphMany(Review::class, 'reviewable');
     }
 
     public function appointments()
@@ -86,11 +86,6 @@ class Doctor extends Authenticatable
     public function labReports()
     {
         return $this->hasMany(LabReport::class);
-    }
-
-    public function diagnostics()
-    {
-        return $this->hasMany(Diagnostic::class);
     }
     
 }

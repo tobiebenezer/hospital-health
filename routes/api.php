@@ -47,6 +47,7 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/summary', [App\Http\Controllers\Api\DashboardController::class, 'summary']);
     Route::get('/analytics', [App\Http\Controllers\Api\DashboardController::class, 'analytics']);
     Route::get('/doctor-stats', [App\Http\Controllers\Api\DashboardController::class, 'doctorStats']);
+    Route::get('/charts', [App\Http\Controllers\Api\DashboardController::class, 'charts']);
 })->middleware('auth:sanctum');
 
 Route::get('/doc', function () {
