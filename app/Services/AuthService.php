@@ -28,14 +28,10 @@ class AuthService
         return DB::transaction(function () use ($data) {
             // Create the user
             $user = User::create([
-                'first_name' => $data['first_name'],
-                'last_name'  => $data['last_name'],
+                'name' => $data['first_name'] . ' ' . $data['last_name'],
                 'email'      => $data['email'],
                 'password'   => $data['password'],
             ]);
-
-            $user->cart()->create();
-
 
             $otp = $this->otpService->generateOtp($user->email);
             $user->sendEmailVerificationNotificationWithOtp($otp);
